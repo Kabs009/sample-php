@@ -20,8 +20,13 @@ $options = array(
         )
     );
 
-    $context  = stream_context_create($options);
-    $resp = file_get_contents($url, false, $context);
-    var_dump($resp);
+   $curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $options );
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+$resp = curl_exec($curl);
+$msg_resp = json_decode($resp);
 
 ?>
