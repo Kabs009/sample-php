@@ -1,6 +1,6 @@
 
 <html>
-  <form action="https://sample-php-bjy54.ondigitalocean.app/transact" method = "post">
+  <form action="https://sample-php-bjy54.ondigitalocean.app/transact" method="post">
   <label for="phone">Enter Phone:</label><br>
   <input type="text" id="Phone" name="phone" value=""><br>
   <label for="amount">Enter Amount:</label><br>
