@@ -4,5 +4,5 @@
   <label for="amount">Enter Amount:</label><br>
   <input type="text" id="amount" name="amount" value=""><br><br>
   <input type="submit" value="Submit">
-</form>
+
 
