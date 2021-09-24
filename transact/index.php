@@ -1,12 +1,12 @@
 <?php
-$amount = $_POST["amount"]; //Amount to transact 
-$phonenuber = $_POST["phone"]; // Phone number paying
-$Account_no = "ABUNDANT LIFE FAMILY CHAPEL"; // Enter account number optional
+$amount = $_POST['amount']; //Amount to transact 
+$phonenuber = $_POST['phone']; // Phone number paying
+$Account_no = 'ABUNDANT LIFE FAMILY CHAPEL'; // Enter account number optional
 $url = 'https://tinypesa.com/api/v1/express/initialize';
 $data = array(
     'amount' => $amount,
     'msisdn' => $phonenuber,
-    'account_no'=>$Account_no,
+    'account_no'=>$Account_no
 );
 $headers = array(
     'Content-Type: application/x-www-form-urlencoded',
