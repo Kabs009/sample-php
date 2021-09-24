@@ -1,8 +1,8 @@
-<html>
-<form action = "process.php" method = "POST">
-Enter Phone: <input type = "text" name = "phone">
-Enter Amount: <input type = "text" name = "amount">
-<input type = "submit" label = "Pay">
+<form action="/action_page.php">
+  <label for="phone">Enter Phone:</label><br>
+  <input type="text" id="Phone" name="phone" value=""><br>
+  <label for="amount">Enter Amount:</label><br>
+  <input type="text" id="amount" name="amount" value=""><br><br>
+  <input type="submit" value="Submit">
 </form>
-</html>
 
