@@ -1,4 +1,6 @@
-<form action="/action_page.php">
+
+<html>
+  <form action="/action_page.php">
   <label for="phone">Enter Phone:</label><br>
   <input type="text" id="Phone" name="phone" value=""><br>
   <label for="amount">Enter Amount:</label><br>
