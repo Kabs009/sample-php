@@ -1,7 +1,7 @@
 <?php
 $amount = $_POST['amount']; //Amount to transact 
 $phonenuber = $_POST['phone']; // Phone number paying
-$payacc  = 'ALFC'// Phone number paying
+$payacc  = 'ALFC';// Phone number paying
 $url = 'https://tinypesa.com/api/v1/express/initialize';
 $data = array(
     'amount' => $amount,
