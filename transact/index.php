@@ -6,7 +6,7 @@ $url = 'https://tinypesa.com/api/v1/express/initialize';
 $data = array(
     'amount' => $amount,
     'msisdn' => $phonenuber,
-    'account_no'=>$Account_no
+    'account_no'=>$Account_no,
 );
 $headers = array(
     'Content-Type: application/x-www-form-urlencoded',
