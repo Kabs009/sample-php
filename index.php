@@ -7,7 +7,7 @@
   
     <label for="amount">Amount</label>
     <input type="text" name="amount" placeholder="Enter Amount">
-  <input type="submit" value="PAY NOW">
+  <input type="submit" value="PAY NOW" name="submit">
 
   
 </form>
