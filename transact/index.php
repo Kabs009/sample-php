@@ -4,7 +4,7 @@ $phonenumber = $_GET['phone']; // Phone number paying
 $payacc  = 'ALFC';// Phone number paying
 $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest');
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Bearer ZoWuGfEquyA4wcxhpBAsAoDstozr',
+   
     'Content-Type: application/json'
 ]);
 curl_setopt($ch, CURLOPT_POST, 1);
