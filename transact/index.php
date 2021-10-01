@@ -1,30 +1,30 @@
 <?php 
 $amount = $_GET['amount']; //Amount to transact 
-$phonenuber = $_GET['phone']; // Phone number paying
+$phonenumber = $_GET['phone']; // Phone number paying
 $payacc  = 'ALFC';// Phone number paying
- $url = 'https://tinypesa.com/api/v1/express/initialize';
-$data = array(
-    'amount' => $amount,
-    'msisdn' => $phonenuber,
-    'account_no'=>$payacc
-);
-$headers = array(
-    'Content-Type: application/x-www-form-urlencoded',
-    'ApiKey: gDCc5OjrSxT' // Replace with your api key
- );
-$info = http_build_query($data);
-
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_POSTFIELDS, $info);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-$resp = curl_exec($curl);
-$msg_resp = json_decode($resp);
- 
-if($msg_resp ->success == 'true'){     
-    echo "PLEASE ENTER PIN";
+$ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest');
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ZoWuGfEquyA4wcxhpBAsAoDstozr',
+    'Content-Type: application/json'
+]);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, {
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjExMDAxMTUzMzEw",
+    "Timestamp": "20211001153310",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": $amount,
+    "PartyA": $phonenumber,
+    "PartyB": 174379,
+    "PhoneNumber": $phonenumber,
+    "CallBackURL": "https://mydomain.com/path",
+    "AccountReference": "CompanyXLTD",
+    "TransactionDesc": $payacc 
+  });
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response     = curl_exec($ch);
+curl_close($ch);
+echo $response;
 }
 
 
